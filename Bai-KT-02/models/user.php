@@ -95,5 +95,9 @@ class User
         $db = Db::getInstance();;
         $q = "SELECT * FROM user WHERE user_name = $user_name AND pass = $pass AND status = 1 AND privilege = 1";
         $r = mysqli_query($db, $q);
+        if (mysqli_num_rows($r) > 0) {
+           return true;
+        }
+        return false;
     }
 }
