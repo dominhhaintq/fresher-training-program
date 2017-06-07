@@ -61,7 +61,7 @@ class UsersController
                 $inputUsername = $_POST["inputUsername"];
                 $inputPassword = $_POST["inputPassword"];
                 if (User::check_Admin($inputUsername, $inputPassword)) {
-                    header("Location: ./index.php?controller=users&&action=listUsers");
+                    header("Location: ./controllers/index.php?controller=users&&action=listUsers");
                 }
             }
         }
