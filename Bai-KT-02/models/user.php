@@ -93,7 +93,7 @@ class User
     public static function check_Admin($user_name, $pass)
     {
         $db = Db::getInstance();;
-        $q = "SELECT * FROM user WHERE user_name = $user_name AND pass = $pass AND status = 1 AND privilege = 1";
+        $q = "SELECT * FROM user WHERE user_name = '{$user_name}' AND pass = '{$pass}' AND status = '1' AND privilege = '1'";
         $r = mysqli_query($db, $q);
         if (mysqli_num_rows($r) > 0) {
            return true;
